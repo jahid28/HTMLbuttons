@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #Btn {
+        width: 80px;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin: 300px;
+        position: absolute;
+        z-index: -1;
+        /* box-shadow: 0px 0px 0px 1px black; */
+        cursor: pointer;
+
+    }
+
+    /* #Btn:hover{
+    
+       box-shadow: inset 50px 0px 0px 0px rgb(83, 52, 11);
+       transition: all 0.5s linear;
+
+   } */
+
+    #Btn2 {
+        cursor: pointer;
+        background-color: rgb(169, 189, 192);
+        position: absolute;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 110px;
+        margin: 300px;
+        
+
+
+
+    }
+</style>
+
+<body>
+    <p class="tog" id="Btn"></p>
+    <p class="tog2" id="Btn2"></p>
+
+</body>
+<script>
+    clk = document.getElementById('Btn')
+    clk.addEventListener('click', () => {
+        document.getElementById('Btn').style.boxShadow = "  inset 50px 0px 0px 0px rgb(29, 158, 50)"
+        document.getElementById('Btn').style.transition = "all 0.5s linear"
+        document.getElementById('Btn2').style.transform = "translateX(50px)"
+        document.getElementById('Btn2').style.transition = "all 0.5s linear"
+        tog.classList.toggle('tog');
+
+
+    })
+    clk2 = document.getElementById('Btn2')
+    clk2.addEventListener('click', () => {
+        document.getElementById('Btn').style.boxShadow = "  inset 50px 0px 0px 0px rgb(29, 158, 50)"
+        document.getElementById('Btn').style.transition = "all 0.5s linear"
+        document.getElementById('Btn2').style.transform = "translateX(50px)"
+        document.getElementById('Btn2').style.transition = "all 0.5s linear"
+        tog.classList.toggle('tog');
+
+    })
+
+    
+
+    // clk = document.getElementById('Btn')
+    // clk.addEventListener('click', () => {
+    //     tog.classList.toggle('tog');
+
+        
+    // })
+
+
+    // burger.addEventListener('click', ()=>{
+    //     rightNav.classList.toggle('v-class-resp');
+    //     navList.classList.toggle('v-class-resp');
+    //     navbar.classList.toggle('h-nav-resp');
+
+
+    
+
+   
+
+</script>
+
+</html>
