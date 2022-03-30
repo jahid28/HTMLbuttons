@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(150, 150, 137);
+        transition: all linear .25s;
+    }
+    body.active{
+        background-color: rgb(219, 216, 11);
+        transition: all linear .25s;
+    }
+    #d1{
+        cursor: pointer;
+        width: 120px;
+        height: 40px;
+        border-radius: 35px;
+        border: 5px solid rgb(59, 55, 55);
+        margin: 200px auto;
+        transition: all linear .25s;
+        
+    }
+    #d1.active{
+       background-color: rgb(51, 160, 65);
+       transition: all linear .25s;
+        
+    }
+    #d2{
+        width: 40px;
+        height: 40px;
+        border-radius: 35px;
+        border: 2px solid rgb(0, 0, 0);
+        /* box-shadow: inset 0px 0px 0px 50px rgb(59, 55, 55); */
+        margin: -2px;
+        background-color: rgb(59, 55, 55);
+        transition: all linear .25s;
+       
+        
+    }
+    #d2.active{
+        width: 40px;
+        height: 40px;
+        border-radius: 35px;
+        border: 2px solid rgb(0, 0, 0);
+        margin: -2px 0px 0px 78px;
+        /* background-color: rgb(211, 201, 221); */
+        transition: all linear .25s;
+       
+        
+    }
+    .p1{
+        /* margin: auto; */
+        text-align: center;
+        /* position: absolute; */
+        position: relative;
+        bottom: 200px;
+        font-size: 40px;
+        display: none;
+    }
+    .p1.active{
+        display: block;
+    }
+    .p2{
+        /* margin: auto; */
+        text-align: center;
+        /* position: absolute; */
+        position: relative;
+        bottom: 200px;
+        font-size: 40px;
+        /* display: b; */
+    }
+    .p2.active{
+        display: none;
+    }
+</style>
+<body>
+    <div id="d1">
+        <div id="d2" class="d2"></div>
+    </div>
+    <p id="p1" class="p1">OFF</p>
+    <p id="p2" class="p2">ON</p>
+    
+</body>
+<script>
+    document.getElementById('d1').addEventListener( 'click', function(){
+        document.getElementById('d2').classList.toggle('active')
+        document.querySelector('body').classList.toggle('active')
+        document.getElementById('d1').classList.toggle('active')
+        document.getElementById('p1').classList.toggle('active')
+        document.getElementById('p2').classList.toggle('active')
+    })
+</script>
+</html>
