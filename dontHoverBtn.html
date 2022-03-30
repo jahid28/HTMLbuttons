@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* #body {
+        z-index: -1;
+    } */
+
+    #cont {
+        /* z-index: 11; */
+        height: 80vh;
+        width: 80vw;
+        background-color: rgb(131, 129, 126);
+        border: 10px solid rgb(36, 48, 85);
+        border-radius: 20px;
+        margin: 50px;
+
+    }
+
+    #btn {
+        /* transform: translate(); */
+        position: relative;
+        top: 50%;
+        left: 40%;
+        /* padding: 30px; */
+        transition: all linear 1s;
+        /* display: flex; */
+
+    }
+
+
+    #startBtn {
+        margin: 0px 0px 0px 10px;
+    }
+
+    #score,#hiscore {
+        margin: 5px 0px;
+        width: 100px;
+        background-color: rgb(27, 64, 97);
+        padding: 5px;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 20px;
+        color: rgb(255, 255, 255);
+    }
+</style>
+
+<body>
+
+    <div id="cont" class="cont">
+        <button id="startBtn">START</button>
+
+        <h4 id="hiscore">HiScore = 0</h4>
+
+        <h4 id="score">Score = 0</h4>
+        <button id="btn" class="btn">Go Away</button>
+
+    </div>
+</body>
+
+<script>
+    let sum = 0
+
+    let hiscore = localStorage.getItem('hiscore')
+    // if (hiscore === null) {
+    //     hiscoreval = 0
+    //     localStorage.setItem('hiscore', JSON.stringify(hiscoreval))
+
+    // }
+    // else {
+        hiscoreval = hiscore
+        document.getElementById('hiscore').innerHTML = 'Hiscore :'+' ' + hiscore
+    // }
+
+
+
+
+
+
+    document.getElementById('startBtn').addEventListener('click', function () {
+        document.getElementById('startBtn').style.display = 'none'
+
+
+
+
+
+        document.getElementById('cont').addEventListener('mousemove', function (e) {
+            console.log(e.offsetX, e.offsetY);
+
+            ss = document.getElementById('btn').offsetTop
+            ff = document.getElementById('btn').offsetLeft
+            x = e.offsetX
+            y = e.offsetY
+            document.getElementById('btn').style.top = y-80  + 'px'
+            document.getElementById('btn').style.left = x - 20 + 'px'
+            document.getElementById('btn').style.transition = 'all linear 1s'
+
+
+        })
+
+        setInterval(function () {
+
+            sum = sum + 1
+            document.getElementById('score').innerHTML = 'Score =' + ' ' + sum
+
+
+        }, 100)
+
+
+
+        document.getElementById('btn').addEventListener('mouseover', function () {
+            alert('OOPS!! :(  \n ' + 'Score =' + sum)
+
+            if (sum > hiscoreval) {
+                hiscoreval = sum
+                localStorage.setItem('hiscore', hiscoreval)
+                document.getElementById('hiscore').innerHTML = 'Hiscore :'+' ' + hiscoreval
+            }
+
+            // JSON.stringify(hiscoreval)
+
+            document.getElementById('score').innerHTML = sum = 0
+
+        })
+
+
+        document.getElementById('cont').addEventListener('mouseleave', function (e) {
+            alert('You Leave the BOX :( \n ' + 'Score =' + sum)
+
+
+            if (sum > hiscoreval) {
+                hiscoreval = sum
+                localStorage.setItem('hiscore', hiscoreval)
+                document.getElementById('hiscore').innerHTML = 'Hiscore :'+' ' + hiscoreval
+            }
+         
+            document.getElementById('score').innerHTML = sum = 0
+
+        })
+
+    })
+
+</script>
+
+</html>
