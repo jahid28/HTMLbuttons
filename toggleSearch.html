@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .icon{
+        width: 20px;
+        height: 20px;
+        background-color: rgb(59, 59, 138);
+        margin: 0px 20px;
+        transform: rotate(-360deg);
+        transition: all linear .5s;
+    }
+    .icon.active{
+        transform: rotate(360deg);
+        transition: all linear .5s;
+    }
+    .nav{
+        display: flex;
+        float:right;
+        margin: 0px 50px 0px 0px;
+    }
+    .se{
+        /* display: none; */
+        opacity: 0;
+        transition: all linear .5s;
+    }
+    .se.active{
+        /* display: block; */
+        opacity: 1;
+        transition: all linear .5s;
+    }
+</style>
+
+<body>
+    <div id="nav" class="nav">
+        <input id="se" class="se" type="search">
+        <div id="icon" class="icon"></div>
+    </div>
+</body>
+<script>
+    document.getElementById('icon').addEventListener('click',function(){
+        document.getElementById('se').classList.toggle('active')
+        document.getElementById('icon').classList.toggle('active')
+    })
+</script>
+
+</html>
