@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: brown;
+        overflow: hidden;
+    }
+   
+    #box{
+        width: 70px;
+        transform: translate();
+        position: relative;
+        top: 50vh;
+        left: 40vw;
+        padding: 30px;
+        transition: all linear .05s;
+        
+    }
+    /* #btn{
+        padding: 100px;
+    } */
+  
+</style>
+
+
+<body>
+    <div id="d1">
+        <div id="box">
+            <button id="btn">TAP ME</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    
+    document.getElementById('box').addEventListener('mouseover', function(e){
+    console.log(e.offsetX, e.offsetY);
+    x=e.offsetX
+    y=e.offsetY
+    document.getElementById('box').style.top=x*5+'px'
+    // document.getElementById('box').style.bottom=x/5+'px'
+    document.getElementById('box').style.left=y*7+'px'
+    // document.getElementById('box').style.right=y/4+'px'
+    document.getElementById('box').style.transition='all linear .7s'
+
+    if(document.getElementById('box').style.left>77){
+        document.getElementById('box').style.left='40vw'
+    
+    }
+    else if(document.getElementById('box').style.top>80){
+        document.getElementById('box').style.top='50vw'
+    
+    }
+})
+
+document.getElementById('btn').addEventListener('click',function(){
+    alert('YAY!! You clicked it')
+})
+
+
+</script>
+
+</html>
